@@ -3,7 +3,7 @@ from os import listdir
 from os.path import isfile, join
 import requests
 import json
-from pprint import pprint
+# from pprint import pprint
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -11,6 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent
 PIC_FOLDER = 'pic'
 folder = BASE_DIR/PIC_FOLDER
 folder.mkdir(exist_ok=True)
+
+# 讀取api次數
+TIMES = 30
 
 
 # 看板名稱
@@ -79,14 +82,11 @@ def read_api(ba='before', postid=None):
 
 
 def main():
-
-    # 讀取api次數
-    times = 30
-    times -= 1
+    time = TIMES - 1
     posts, postid, _ = read_api()
     if posts:
         dl_or_send_pic(posts=posts, folder=BASE_DIR/PIC_FOLDER)
-    for i in range(times):
+    for i in range(time):
         posts, postid, _ = read_api(postid=postid)
         if posts:
             dl_or_send_pic(posts=posts, folder=BASE_DIR/PIC_FOLDER)
