@@ -1,13 +1,25 @@
 # About This Project
 
-> download pictures from dcard posts to local folder and send pic to telegram bot.
+> Download pictures from dcard posts to local folder and send pic to telegram bot.
 
-# Setups
-* install requests 
-* check `.env` file
-  + token
-  + chat_id
-  + forum
-* check `main.py`
-  + PIC_FOLDER
-  + TIMES
+## Setups
+
+#### install package
+
+* `pip install requests`
+
+### Check `.env` File
+
+#### Dcard
+
+* forum
+
+#### Telegram
+
+* token
+* chat_id
+
+### Check `main.py` File
+
+* PIC_FOLDER
+* TIMES
